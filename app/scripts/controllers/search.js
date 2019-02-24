@@ -9,16 +9,34 @@
  */
 angular.module('deputyApp')
 .controller('SearchCtrl', ['$scope', 'jsonService', function ($scope, jsonService) {
-	$scope.example16model = []; 
-	$scope.example16data = [ {id: 1, label: "David"}, {id: 2, label: "Jhon"}, {id: 3, label: "Danny"}]; 
+	$scope.maxSize = 5; 
+	$scope.bigTotalItems = 175;
+	$scope.bigCurrentPage = 1;
+	$scope.currentPage = 1;
+
+	$scope.filter = {
+		industry: [],
+		location: [],
+		companySize: [],
+		useCase: []
+	};
+
+	$scope.formattedFilter = {
+		amount: 0,
+		applied: {
+			industry: [],
+			location: [],
+			companySize: [],
+			useCase: []
+		}
+	};
+
 	$scope.selectSettings = {styleActive: true, showCheckAll: false};
 
-	$scope.industryValues;
-
-	$scope.selectTextIndustry = {buttonDefaultText: 'Industry'};
-	$scope.selectTextLocation = {buttonDefaultText: 'Location'};
-	$scope.selectTextCompanySize = {buttonDefaultText: 'Company Size'};
-	$scope.selectTextUseCase = {buttonDefaultText: 'Use Case'};
+	$scope.selectTextIndustry 		= {buttonDefaultText: 'Industry'};
+	$scope.selectTextLocation 		= {buttonDefaultText: 'Location'};
+	$scope.selectTextCompanySize	= {buttonDefaultText: 'Company Size'};
+	$scope.selectTextUseCase 		= {buttonDefaultText: 'Use Case'};
 
 	$scope.categories = {
 		'use_case': [],
@@ -27,28 +45,41 @@ angular.module('deputyApp')
 		'company_size': []
 	};
 
-	$scope.filters = {};
+	$scope.$watch('filter', () => {
+		let filtersApplied = 0;
 
-	$scope.maxSize = 5; 
-	$scope.bigTotalItems = 175;
-	$scope.bigCurrentPage = 1;
-	$scope.currentPage = 1;
+		for (let f in $scope.filter) {
+			filtersApplied += $scope.filter[f].length;
+    		$scope.formattedFilter.applied[f] = $scope.filter[f].map(x => x.id);
+		}
+
+		$scope.formattedFilter.amount = filtersApplied;
+
+		getUseCaseList();
+		console.log('Filtered', $scope.formattedFilter);
+	}, true);
+
+	init();
 
 	$scope.setPage = function (pageNo) {
 		$scope.currentPage = pageNo;
 	};
 
 	$scope.pageChanged = function() { 
-		console.log('PAGE CHANGED', $scope.currentPage);
-		$scope.getUseCaseList();
+		getUseCaseList();
 	};
 
-	$scope.getUseCaseList = function() {
+	function init() {
+		getUseCaseList();
+	};
+
+	function getUseCaseList() {
 		let options = {
 			pagination: {
 				currentPage: $scope.currentPage,
 				pageLength: $scope.maxSize
-			}
+			},
+			filter: $scope.formattedFilter
 		};
 
 	    jsonService.getUseCaseList(options)
@@ -56,19 +87,13 @@ angular.module('deputyApp')
 	    	$scope.items = response.data;
 	    	$scope.totalItems = response.pagination.totalItems;
 
-	        for(let cat in $scope.categories) {
-		    	$scope.categories[cat] = getValuesOfCategory(cat, $scope.items);
-		    }
-
-	        console.log($scope.categories);
+	    	if (!areCategoriesLoaded()) {
+		        for(let cat in $scope.categories) {
+			    	$scope.categories[cat] = getValuesOfCategory(cat, $scope.items);
+			    }
+	    	}
 	    });
 	};
-
-	function init() {
-		$scope.getUseCaseList();
-	};
-
-	init();
 
     function getValuesOfCategory(cat, collection) {
     	let values = [];
@@ -76,11 +101,13 @@ angular.module('deputyApp')
     	values = _.uniq(values);
 
     	values.forEach((item, index) => {
-    		values[index] = { id: index, label: item };
+    		values[index] = { id: item, label: item };
     	});	
 
     	return values;
     }
 
-
+    function areCategoriesLoaded() {
+    	return $scope.categories[Object.keys($scope.categories)[0]].length > 0;
+    }
 }]);

@@ -10,7 +10,7 @@
         "use_case": [
             "Employee Scheduling",
             "Time & Attendance",
-            "Performance Management"
+            "d Management"
         ],
         "word_count": 452
     },
@@ -62,7 +62,7 @@
         "company_name": "Chat Time",
         "image_url": "https://d21pqaamub0upm.cloudfront.net/dptycms/wp-content/uploads/2018/10/logo-chatime.png",
         "excerpt": "Chatime uses Deputy to save 204 hours of admin every week ($1million+/year) across its network",
-        "industry": "Service",
+        "industry": "Services",
         "location": "USA",
         "company_size": "100+",
         "use_case": [
@@ -162,7 +162,7 @@
         "company_name": "Mosquito Joe",
         "image_url": "https://d21pqaamub0upm.cloudfront.net/dptycms/wp-content/uploads/2018/07/Mojo-logo2-05.png",
         "excerpt": "Scheduling and employee management is ‘fun again’ for ‘MoJo’ owners using Deputy!",
-        "industry": "Service",
+        "industry": "Services",
         "location": "USA",
         "company_size": "50",
         "use_case": [
