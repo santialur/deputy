@@ -9,9 +9,6 @@
  */
 angular.module('deputyApp')
 .controller('SearchCtrl', ['$scope', 'SearchService', function ($scope, SearchService) {
-
-	//Criteria and their categories
-
 	//Filter
 	$scope.filter = {
 		amount: 0,
@@ -40,10 +37,9 @@ angular.module('deputyApp')
 
 	//Pagination settings
 	$scope.itemsPerPage = 5; 
-	$scope.bigTotalItems = 175;
-	$scope.bigCurrentPage = 1;
 	$scope.currentPage = 1;
-
+	
+	
 	$scope.$watch('selectFilter', () => {
 		let filtersApplied = 0;
 
@@ -55,7 +51,6 @@ angular.module('deputyApp')
 		$scope.filter.amount = filtersApplied;
 
 		getUseCaseList();
-		// console.log('Filtered', $scope.filter);
 	}, true);
 
 	init();
@@ -86,7 +81,6 @@ angular.module('deputyApp')
 	    	$scope.items = response.data;
 	    	$scope.totalItems = response.pagination.totalItems;
 	    	$scope.categories = response.categories;
-	    	console.log('CAT.  =====>', response.categories);
 	    });
 	};
 
