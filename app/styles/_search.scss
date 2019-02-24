@@ -4,7 +4,7 @@
 	}	
 
 	background-color: #F3F5F6;
-	padding: 50px 100px;
+	padding: 50px 10%;
 	height: 270px;
 	margin: 0 auto;
 	text-align: center;
@@ -97,12 +97,10 @@
 
 		.card { 
 			flex-basis: 30%;
-			flex: shrink;
 			background-color: #FFFFFF;
 			color: #5D7888;
 			margin-bottom: 30px;
-			width: 340px;
-			height: 330px;
+			max-width: 340px;
 			box-sizing: border-box; 
 			border-radius: 2px;
 			box-shadow: 0px 1px 15px #DDD;
@@ -113,6 +111,11 @@
 				flex-direction: column;
 			 	justify-content: space-around;
 			 	align-items: center;	
+ 				height: 330px;
+			}
+
+			@media only screen and (max-width: 600px) {
+				flex-basis: 100%;
 			}
 		}
 

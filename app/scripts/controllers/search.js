@@ -11,7 +11,7 @@ angular.module('deputyApp')
 .controller('SearchCtrl', ['$scope', 'jsonService', function ($scope, jsonService) {
 	$scope.example16model = []; 
 	$scope.example16data = [ {id: 1, label: "David"}, {id: 2, label: "Jhon"}, {id: 3, label: "Danny"}]; 
-	$scope.example16settings = {styleActive: true, showCheckAll: false};
+	$scope.selectSettings = {styleActive: true, showCheckAll: false};
 
 	$scope.industryValues;
 
@@ -31,7 +31,7 @@ angular.module('deputyApp')
 
 	};
 
-    var promise = jsonService.getHomeItems();
+    var promise = jsonService.getUseCaseList();
     promise.then(function(data) {
     	$scope.items = data.data;
         for(let cat in $scope.categories) {

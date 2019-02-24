@@ -8,7 +8,7 @@ angular.module('deputyApp')
         deferred.resolve(data);
     });
 
-    this.getHomeItems = function() {
+    this.getUseCaseList = function() {
         return deferred.promise;
     }
 });
