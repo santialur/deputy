@@ -7,22 +7,22 @@
 
       <span class="select" ng-dropdown-multiselect=""
               options="categories.industry" 
-              selected-model="filter.industry" 
+              selected-model="selectFilter.industry" 
               extra-settings="selectSettings" 
               translation-texts="selectTextIndustry"></span>
       <span class="select" ng-dropdown-multiselect=""
               options="categories.location" 
-              selected-model="filter.location" 
+              selected-model="selectFilter.location" 
               extra-settings="selectSettings" 
               translation-texts="selectTextLocation"></span>
       <span class="select" ng-dropdown-multiselect=""
               options="categories.company_size" 
-              selected-model="filter.companySize" 
+              selected-model="selectFilter.company_size" 
               extra-settings="selectSettings" 
               translation-texts="selectTextCompanySize"></span>
       <span class="select" ng-dropdown-multiselect=""
               options="categories.use_case" 
-              selected-model="filter.useCase" 
+              selected-model="selectFilter.use_case" 
               extra-settings="selectSettings" 
               translation-texts="selectTextUseCase"></span>
     </div>
@@ -35,7 +35,7 @@
   </section>
 
   <section class="pagination">
-    <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></ul>
+    <ul uib-pagination total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></ul>
   </section>
 </section>  
 

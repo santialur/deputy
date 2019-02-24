@@ -1,47 +1,42 @@
 'use strict';
 
 angular.module('deputyApp')
-.service("jsonService", function($http, _) {
+.service("SearchService", function($http, _) {
 
     this.getUseCaseList = function(opt) {
 	    return $http.get('assets/json/data.json')
 	    .then(function(response) {
+
+	    	//Items after filter
 	    	let filteredItems = [];
-	    	let pageLength = opt.pagination.pageLength;
+
+	    	let pageLength = opt.pagination.pageLength;	
 	    	let currentPage = opt.pagination.currentPage;
+
+	    	//Items fetched
 	    	let items = response.data;
 
 	    	let filters = opt.filter.applied;
 
     		filteredItems = items;
+    		console.log('Filtered Items ', filteredItems);
 
 	    	if (opt.filter.amount !== 0) {
+	    		console.log('Filters', filters);
 
-	    		for (let f in filters) {
-	    			if (filters[f].length) {
-	    				filteredItems = _.filter(filteredItems, (i) => {
-			    			console.log(f, ' ', filters[f]);
-			    			return _.includes(filters[f], i[f]);
+	    		for (let prop in filters) {
+	    			console.log(prop, ' ', filters[prop]);
+
+	    			if (filters[prop].length) { //This criteria has been used for filtering
+	    				filteredItems = _.filter(filteredItems, (item) => {
+							return Array.isArray(item[prop]) ? 
+								_.intersection(item[prop], filters[prop]).length > 0 : 
+								_.includes(filters[prop], item[prop]);
 			    		});
 	    			}
 	    		}
-
-	    		// filteredItems = _.filter(filteredItems, (i) => {
-	    		// 	console.log('Industry', filters.industry);
-	    		// 	return _.includes(filters.industry, i.industry);
-	    		// });
-	    		// console.log('Pinc,', filteredItems);
-	    		// filteredItems = _.filter(filteredItems, (i) => {
-	    		// 	console.log('Location', filters.location);
-	    		// 	console.log('includes', _.includes(filters.location, i.location));
-	    		// 	return _.includes(filters.location, i.location);
-	    		// });
-	    		// filteredItems = _.filter(filteredItems, (i) => {
-	    		// 	console.log('CompanySize', filters.companySize);
-	    		// 	console.log('includes', _.includes(filters.companySize, i.companySize));
-	    		// 	return _.includes(filters.companySize, i.companySize);
-	    		// });
 	    	} 
+    		console.log('filtered items', filteredItems, filteredItems.length);
 
 	    	let end = currentPage * pageLength;
 	    	let start = end - pageLength;
