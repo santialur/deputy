@@ -9,9 +9,20 @@
 	margin: 0 auto;
 	text-align: center;
 
+	@media only screen and (max-width: 600px) {
+		height: 500px;
+	}
+
 	.filters {
 		padding-top: 20px;
 		color: #5D7888;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@media only screen and (max-width: 600px) {
+			flex-direction: column;
+		}
 
 		.tip {
 			font-size: 12px;
@@ -21,11 +32,19 @@
 		.select {
 			margin: 0 5px;
 		}
-
+	
 		.multiselect-parent.btn-group.dropdown-multiselect {
 			.dropdown-menu.dropdown-menu-form {
 				padding: 25px;
 				width: 300px;
+
+				@media only screen and (max-width: 600px) {
+					width: 200px;
+				}
+			}
+
+			@media only screen and (max-width: 600px) {
+				margin-bottom: 10px;
 			}
 
 			button.dropdown-toggle {

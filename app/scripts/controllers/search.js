@@ -104,7 +104,7 @@ angular.module('deputyApp')
 
     function getValuesOfCategory(cat, collection) {
     	let values = [];
-    	collection.forEach(item => values = values.concat(item[cat]) );	
+    	collection.forEach(item => values = values.concat(item[cat]));	
     	values = _.uniq(values);
 
     	values.forEach((item, index) => {
