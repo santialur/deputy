@@ -92,7 +92,7 @@
 
 	.results {
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-start;
 		flex-wrap: wrap;
 
 		.card { 
@@ -100,6 +100,9 @@
 			background-color: #FFFFFF;
 			color: #5D7888;
 			margin-bottom: 30px;
+	
+			margin-left: 3%;
+
 			max-width: 340px;
 			box-sizing: border-box; 
 			border-radius: 2px;

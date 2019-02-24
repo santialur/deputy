@@ -27,18 +27,48 @@ angular.module('deputyApp')
 		'company_size': []
 	};
 
-	$scope.filters = {
+	$scope.filters = {};
 
+	$scope.maxSize = 5; 
+	$scope.bigTotalItems = 175;
+	$scope.bigCurrentPage = 1;
+	$scope.currentPage = 1;
+
+	$scope.setPage = function (pageNo) {
+		$scope.currentPage = pageNo;
 	};
 
-    var promise = jsonService.getUseCaseList();
-    promise.then(function(data) {
-    	$scope.items = data.data;
-        for(let cat in $scope.categories) {
-	    	$scope.categories[cat] = getValuesOfCategory(cat, data.data);
-	    }
-        console.log($scope.categories);
-    });
+	$scope.pageChanged = function() { 
+		console.log('PAGE CHANGED', $scope.currentPage);
+		$scope.getUseCaseList();
+	};
+
+	$scope.getUseCaseList = function() {
+		let options = {
+			pagination: {
+				currentPage: $scope.currentPage,
+				pageLength: $scope.maxSize
+			}
+		};
+
+	    jsonService.getUseCaseList(options)
+	    .then(function(response) {
+	    	$scope.items = response.data;
+	    	$scope.totalItems = response.pagination.totalItems;
+
+	        for(let cat in $scope.categories) {
+		    	$scope.categories[cat] = getValuesOfCategory(cat, $scope.items);
+		    }
+
+	        console.log($scope.categories);
+	    });
+	};
+
+	function init() {
+		$scope.getUseCaseList();
+	};
+
+	init();
 
     function getValuesOfCategory(cat, collection) {
     	let values = [];
@@ -51,4 +81,6 @@ angular.module('deputyApp')
 
     	return values;
     }
+
+
 }]);

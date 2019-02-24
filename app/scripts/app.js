@@ -12,6 +12,7 @@ angular
   .module('deputyApp', [
     'ngRoute',
     'angularjs-dropdown-multiselect',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
