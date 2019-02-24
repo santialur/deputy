@@ -11,12 +11,6 @@ angular.module('deputyApp')
 .controller('SearchCtrl', ['$scope', 'SearchService', function ($scope, SearchService) {
 
 	//Criteria and their categories
-	$scope.categories = {
-		'use_case': [],
-		'industry': [],
-		'location': [],
-		'company_size': []
-	};
 
 	//Filter
 	$scope.filter = {
@@ -91,30 +85,9 @@ angular.module('deputyApp')
 	    .then(function(response) {
 	    	$scope.items = response.data;
 	    	$scope.totalItems = response.pagination.totalItems;
-
-	    	console.log('PAGINATION', response.pagination);
-
-	    	if (!areCategoriesLoaded()) {
-		        for(let cat in $scope.categories) {
-			    	$scope.categories[cat] = getValuesOfCategory(cat, $scope.items);
-			    }
-	    	}
+	    	$scope.categories = response.categories;
+	    	console.log('CAT.  =====>', response.categories);
 	    });
 	};
 
-    function getValuesOfCategory(cat, collection) {
-    	let values = [];
-    	collection.forEach(item => values = values.concat(item[cat]));	
-    	values = _.uniq(values);
-
-    	values.forEach((item, index) => {
-    		values[index] = { id: item, label: item };
-    	});	
-
-    	return values;
-    }
-
-    function areCategoriesLoaded() {
-    	return $scope.categories[Object.keys($scope.categories)[0]].length > 0;
-    }
 }]);

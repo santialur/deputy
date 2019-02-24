@@ -10,7 +10,7 @@
         "use_case": [
             "Employee Scheduling",
             "Time & Attendance",
-            "d Management"
+            "Management"
         ],
         "word_count": 452
     },
@@ -39,7 +39,7 @@
         "company_size": "30-50",
         "use_case": [
             "Time & Attendance",
-            "workplace Communication"
+            "Workplace Communication"
         ],
         "word_count": 381
     },
@@ -69,7 +69,7 @@
             "Employee Scheduling",
             "Time & Attendance",
             "Employee Tasking",
-            "Workplace Communiation",
+            "Workplace Communication",
             "Performance Management"
         ],
         "word_count": 820

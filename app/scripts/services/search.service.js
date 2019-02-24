@@ -3,6 +3,13 @@
 angular.module('deputyApp')
 .service("SearchService", function($http, _) {
 
+	const categories = {
+		'use_case': [],
+		'industry': [],
+		'location': [],
+		'company_size': []
+	};
+
     this.getUseCaseList = function(opt) {
 	    return $http.get('assets/json/data.json')
 	    .then(function(response) {
@@ -15,6 +22,10 @@ angular.module('deputyApp')
 
 	    	//Items fetched
 	    	let items = response.data;
+
+        	for(let cat in categories) {
+		    	categories[cat] = getValuesOfCategory(cat, items);
+		    }
 
 	    	let filters = opt.filter.applied;
 
@@ -49,9 +60,27 @@ angular.module('deputyApp')
 
     	    response.data = filteredItems.slice(start, end);
 
+    	    response.categories = categories;
+
     		return response;
     	});
     };
+
+	function getValuesOfCategory(cat, collection) {
+    	let values = [];
+    	let count = [];
+    	collection.forEach(item => values = values.concat(item[cat]));	
+    	count = _.countBy(values);
+    	values = _.uniq(values);
+
+    	console.log('Count', count, 'values', values);
+    	values.forEach((item, index) => {
+    		console.log('CONSOLE', item, index);
+    		values[index] = { id: item, label: item + ' (' + count[item] + ')' };
+    	});	
+
+    	return values;
+    }
 });
 
 
