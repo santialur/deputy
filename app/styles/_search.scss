@@ -1,0 +1,142 @@
+.search {
+	h1 {
+		font-size: 30px;
+	}	
+
+	background-color: #F3F5F6;
+	padding: 50px 100px;
+	height: 270px;
+	margin: 0 auto;
+	text-align: center;
+
+	.filters {
+		padding-top: 20px;
+		color: #5D7888;
+
+		.tip {
+			font-size: 12px;
+			text-transform: uppercase;
+		}
+
+		.select {
+			margin: 0 5px;
+		}
+
+		.multiselect-parent.btn-group.dropdown-multiselect {
+			.dropdown-menu.dropdown-menu-form {
+				padding: 25px;
+				width: 300px;
+			}
+
+			button.dropdown-toggle {
+				display: flex;
+			    justify-content: space-between;
+			    align-items: center;
+				width: 245px;
+				color: #5D7888;
+				background-color: #FFF !important; 
+
+				&:active, &:hover, &:focus {
+					background-color: #FFF !important; 
+				}
+			}
+
+			li {
+				&.active {
+					a {
+						color: #FFF;
+						background-color: #093149;
+					}
+				}
+
+				.option {
+					background-color: #F3F5F6;
+					color: #5D7888;
+					margin-top: 5px;
+					border-radius: 5px;
+					padding: 10px 30px 10px 15px;
+
+					.padded {
+						padding-left: 20px;	
+					}
+				}
+			}
+
+			.multiselect-top {
+				display: flex;
+			    justify-content: space-between;
+			    align-items: center;
+
+			    a {
+			    	padding: 0;
+			    	color: #259BE4;
+			    	text-decoration: underline;
+			    	font-weight: bold;
+			    }				
+			}
+		}
+	}
+
+	select {
+		color: #5D7888;
+		padding: 10px;
+	}
+
+	.top {
+		margin-bottom: 35px;
+
+		h1 {
+			font-weight: bold;
+		}
+	}
+
+	.results {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		.card { 
+			flex-basis: 30%;
+			flex: shrink;
+			background-color: #FFFFFF;
+			color: #5D7888;
+			margin-bottom: 30px;
+			width: 340px;
+			height: 330px;
+			box-sizing: border-box; 
+			border-radius: 2px;
+			box-shadow: 0px 1px 15px #DDD;
+			padding: 30px;
+
+			deputy-card {
+				display: flex;
+				flex-direction: column;
+			 	justify-content: space-around;
+			 	align-items: center;	
+			}
+		}
+
+		.logo {
+			img {
+				max-width: 125px;
+			  	max-height:75px;
+				width: auto;
+				height: auto;
+			}
+		}
+
+		.link {
+			color: #1F77BC;
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		.tip {
+			text-transform: uppercase;
+			font-size: 10px;
+		}
+	}
+}
+
+
+/* VARIABLES */

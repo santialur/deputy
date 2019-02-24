@@ -1,0 +1,187 @@
+[
+    {
+        "company_id": 1,
+        "company_name": "Deputy",
+        "image_url": "https://d21pqaamub0upm.cloudfront.net/dptycms/wp-content/themes/deputy/assets/imagesnew/logo/deputy-stack-blue@2x.png",
+        "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
+        "industry": "Other",
+        "location": "Australia",
+        "company_size": "100+",
+        "use_case": [
+            "Employee Scheduling",
+            "Time & Attendance",
+            "Performance Management"
+        ],
+        "word_count": 452
+    },
+    {
+        "company_id": 2,
+        "company_name": "DropCar",
+        "image_url": "https://d21pqaamub0upm.cloudfront.net/dptycms/wp-content/uploads/2018/12/DropCar_LOGO1.png",
+        "excerpt": "DropCar saw a 57% decrease in the number of no-shows amongst their drivers after using Deputy.",
+        "industry": "Services",
+        "location": "Australia",
+        "company_size": "50-100",
+        "use_case": [
+            "Employee Scheduling",
+            "Auto-Scheduling",
+            "Time & Attendance"
+        ],
+        "word_count": 633
+    },
+    {
+        "company_id": 3,
+        "company_name": "Wildash",
+        "image_url": "https://d21pqaamub0upm.cloudfront.net/dptycms/wp-content/uploads/2018/09/Wildash_LOGO.png",
+        "excerpt": "Deputy helps Wildash London spend time on what really matters.",
+        "industry": "Retail",
+        "location": "England",
+        "company_size": "30-50",
+        "use_case": [
+            "Time & Attendance",
+            "workplace Communication"
+        ],
+        "word_count": 381
+    },
+    {
+        "company_id": 4,
+        "company_name": "The London Animal Hospital",
+        "image_url": "https://d21pqaamub0upm.cloudfront.net/dptycms/wp-content/uploads/2018/11/The-London-Animal-Hospital_LOGO.png",
+        "excerpt": "Deputy makes staff scheduling simpler for The London Animal Hospital.",
+        "industry": "Healthcare",
+        "location": "England",
+        "company_size": "10-30",
+        "use_case": [
+            "Employee Scheduling",
+            "Time & Attendance"
+        ],
+        "word_count": 270
+    },
+    {
+        "company_id": 6,
+        "company_name": "Chat Time",
+        "image_url": "https://d21pqaamub0upm.cloudfront.net/dptycms/wp-content/uploads/2018/10/logo-chatime.png",
+        "excerpt": "Chatime uses Deputy to save 204 hours of admin every week ($1million+/year) across its network",
+        "industry": "Service",
+        "location": "USA",
+        "company_size": "100+",
+        "use_case": [
+            "Employee Scheduling",
+            "Time & Attendance",
+            "Employee Tasking",
+            "Workplace Communiation",
+            "Performance Management"
+        ],
+        "word_count": 820
+    },
+    {
+        "company_id": 7,
+        "company_name": "Alpha Coffee",
+        "image_url": "https://d21pqaamub0upm.cloudfront.net/dptycms/wp-content/uploads/2018/07/Alpha-Coffee_LOGO.png",
+        "excerpt": "Deputy provides the highest level of service for Veteran and military-spouse owners of Alpha Coffee.",
+        "industry": "Hospitality",
+        "location": "USA",
+        "company_size": "10-30",
+        "use_case": [
+            "Employee Scheduling",
+            "Time & Attendance"           
+        ],
+        "word_count": 442
+    },
+    {
+        "company_id": 8,
+        "company_name": "Cheers To Ewe!",
+        "image_url": "https://d21pqaamub0upm.cloudfront.net/dptycms/wp-content/uploads/2018/07/Cheers-to-Ewe_LOGO.png",
+        "excerpt": "Deputy provides structure and professionalism to the vibrant yarn shop Cheers to Ewe!",
+        "industry": "Retail",
+        "location": "England",
+        "company_size": "10-30",
+        "use_case": [
+            "Employee Scheduling",
+            "Time & Attendance"           
+        ],
+        "word_count": 380
+    },
+    {
+        "company_id": 9,
+        "company_name": "Boxpark",
+        "image_url": "https://d21pqaamub0upm.cloudfront.net/dptycms/wp-content/uploads/2018/09/Boxpark_LOGO.png",
+        "excerpt": "Boxpark Saves 4% on total labour costs with Deputy!",
+        "industry": "Hospitality",
+        "location": "UK",
+        "company_size": "10-30",
+        "use_case": [
+            "Employee Scheduling",
+            "Time & Attendance"           
+        ],
+        "word_count": 700
+    },
+    {
+        "company_id": 10,
+        "company_name": "Kerb",
+        "image_url": "https://d21pqaamub0upm.cloudfront.net/dptycms/wp-content/uploads/2018/09/KERB_LOGO.png",
+        "excerpt": "Deputy has helped this growing business to streamline management and communication processes, saving time and increasing revenue.",
+        "industry": "Hospitality",
+        "location": "UK",
+        "company_size": "10-30",
+        "use_case": [
+            "Employee Scheduling",
+            "Time & Attendance"           
+        ],
+        "word_count": 550
+    },
+    {
+        "company_id": 11,
+        "company_name": "Kerb",
+        "image_url": "https://d21pqaamub0upm.cloudfront.net/dptycms/wp-content/uploads/2018/07/Olivia-Macaron-logo_LOGO.png",
+        "excerpt": "The secret ingredient for Olivia Macaron? Deputy!",
+        "industry": "Hospitality",
+        "location": "UK",
+        "company_size": "50",
+        "use_case": [
+            "Payroll integration"         
+        ],
+        "word_count": 320
+    },
+    {
+        "company_id": 12,
+        "company_name": "ACE Hardware",
+        "image_url": "https://d21pqaamub0upm.cloudfront.net/dptycms/wp-content/uploads/2018/07/Ace_Hardware_Logo-e1530813960516.png",
+        "excerpt": "“Coolest ACE Store in America” partners with Deputy to enhance customer service.",
+        "industry": "Retail",
+        "location": "USA",
+        "company_size": "10-30",
+        "use_case": [
+            "Payroll integration",   
+            "Employee Scheduling"      
+        ],
+        "word_count": 420
+    },
+    {
+        "company_id": 13,
+        "company_name": "Mosquito Joe",
+        "image_url": "https://d21pqaamub0upm.cloudfront.net/dptycms/wp-content/uploads/2018/07/Mojo-logo2-05.png",
+        "excerpt": "Scheduling and employee management is ‘fun again’ for ‘MoJo’ owners using Deputy!",
+        "industry": "Service",
+        "location": "USA",
+        "company_size": "50",
+        "use_case": [
+            "Newsfeed",   
+            "Employee Scheduling"      
+        ],
+        "word_count": 580
+    },
+    {
+        "company_id": 14,
+        "company_name": "Glam Corner",
+        "image_url": "https://d21pqaamub0upm.cloudfront.net/dptycms/wp-content/uploads/2018/07/gclogo1.png",
+        "excerpt": "Glam Corner finds the perfect fit with Deputy for managing its fashion warehouse.",
+        "industry": "Retail",
+        "location": "Australia",
+        "company_size": "50-100",
+        "use_case": [
+            "Timesheets"      
+        ],
+        "word_count": 390
+    }
+]
