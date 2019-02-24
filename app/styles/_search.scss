@@ -128,16 +128,20 @@
 			}
 		}
 
-		.link {
-			color: #1F77BC;
-			text-decoration: none;
-			font-weight: bold;
-		}
+		.bottom {
+			.link {
+				color: #1F77BC;
+				font-weight: bold;
+				text-decoration: none;
+			}
 
-		.tip {
-			text-transform: uppercase;
-			font-size: 10px;
+			.tip {
+				font-size: 10px;
+				margin-top: 10px;
+				text-transform: uppercase;
+			}
 		}
+	
 	}
 }
 
