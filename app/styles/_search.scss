@@ -3,15 +3,26 @@
 		font-size: 30px;
 	}	
 
-	background-color: #F3F5F6;
-	padding: 50px 100px;
+	background-color: $grey;
+	padding: 50px 10%;
 	height: 270px;
 	margin: 0 auto;
 	text-align: center;
 
+	@media only screen and (max-width: 600px) {
+		height: 500px;
+	}
+
 	.filters {
 		padding-top: 20px;
 		color: #5D7888;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@media only screen and (max-width: 600px) {
+			flex-direction: column;
+		}
 
 		.tip {
 			font-size: 12px;
@@ -21,11 +32,19 @@
 		.select {
 			margin: 0 5px;
 		}
-
+	
 		.multiselect-parent.btn-group.dropdown-multiselect {
 			.dropdown-menu.dropdown-menu-form {
 				padding: 25px;
 				width: 300px;
+
+				@media only screen and (max-width: 600px) {
+					width: 200px;
+				}
+			}
+
+			@media only screen and (max-width: 600px) {
+				margin-bottom: 10px;
 			}
 
 			button.dropdown-toggle {
@@ -92,17 +111,18 @@
 
 	.results {
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-start;
 		flex-wrap: wrap;
 
 		.card { 
 			flex-basis: 30%;
-			flex: shrink;
 			background-color: #FFFFFF;
 			color: #5D7888;
 			margin-bottom: 30px;
-			width: 340px;
-			height: 330px;
+	
+			margin-left: 3%;
+
+			max-width: 340px;
 			box-sizing: border-box; 
 			border-radius: 2px;
 			box-shadow: 0px 1px 15px #DDD;
@@ -113,6 +133,11 @@
 				flex-direction: column;
 			 	justify-content: space-around;
 			 	align-items: center;	
+ 				height: 330px;
+			}
+
+			@media only screen and (max-width: 600px) {
+				flex-basis: 100%;
 			}
 		}
 
@@ -125,16 +150,20 @@
 			}
 		}
 
-		.link {
-			color: #1F77BC;
-			text-decoration: none;
-			font-weight: bold;
-		}
+		.bottom {
+			.link {
+				color: #1F77BC;
+				font-weight: bold;
+				text-decoration: none;
+			}
 
-		.tip {
-			text-transform: uppercase;
-			font-size: 10px;
+			.tip {
+				font-size: 10px;
+				margin-top: 10px;
+				text-transform: uppercase;
+			}
 		}
+	
 	}
 }
 

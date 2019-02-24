@@ -5,25 +5,26 @@
     <div class="filters">
       <span class="tip">Filter By</span>
 
-      <span class="select" ng-dropdown-multiselect="" options="categories.industry" selected-model="example16model" extra-settings="example16settings" translation-texts="selectTextIndustry"></span>
-      <span class="select" ng-dropdown-multiselect="" options="categories.location" selected-model="example16model" extra-settings="example16settings" translation-texts="selectTextLocation"></span>
-      <span class="select" ng-dropdown-multiselect="" options="categories.company_size" selected-model="example16model" extra-settings="example16settings" translation-texts="selectTextCompanySize"></span>
-      <span class="select" ng-dropdown-multiselect="" options="example16data" selected-model="example16model" extra-settings="example16settings" translation-texts="selectTextUseCase"></span>
-
-      <!--       
-      <select name="" id="">
-        <option value="Industries">Industries</option>
-      </select>
-      <select name="" id="">
-          <option value="Location">Location</option>
-      </select>
-      <select name="" id="">
-        <option value="Company Size">Company Size</option>
-      </select>
-      <select name="" id="">
-        <option value="Use Case">Use Case</option>
-      </select> 
-      -->
+      <span class="select" ng-dropdown-multiselect=""
+              options="categories.industry" 
+              selected-model="selectFilter.industry" 
+              extra-settings="selectSettings" 
+              translation-texts="selectTextIndustry"></span>
+      <span class="select" ng-dropdown-multiselect=""
+              options="categories.location" 
+              selected-model="selectFilter.location" 
+              extra-settings="selectSettings" 
+              translation-texts="selectTextLocation"></span>
+      <span class="select" ng-dropdown-multiselect=""
+              options="categories.company_size" 
+              selected-model="selectFilter.company_size" 
+              extra-settings="selectSettings" 
+              translation-texts="selectTextCompanySize"></span>
+      <span class="select" ng-dropdown-multiselect=""
+              options="categories.use_case" 
+              selected-model="selectFilter.use_case" 
+              extra-settings="selectSettings" 
+              translation-texts="selectTextUseCase"></span>
     </div>
   </div>
 
@@ -31,48 +32,10 @@
     <div class="card" ng-repeat="item in items"> 
       <deputy-card info="item"></deputy-card>
     </div>
+  </section>
 
-<!--     <div class="card" ng-repeat="uc in useCases">
-      <div class="logo">
-          <img ng-src="{{uc.image_url}}" alt="">
-      </div>
-      <div class="description">
-        {{uc.excerpt}}
-      </div>
-      <a href="" class="link link--card"> Read More <i class="fa fa-arrow-right"></i></a>
-      <div class="tip">
-        <i class="far fa-clock"></i>
-        {{uc.word_count / 200}} min. read
-      </div>
-    </div> -->
-
-<!--     <div class="card">
-      <div class="logo">
-          <img src="https://d21pqaamub0upm.cloudfront.net/dptycms/wp-content/uploads/2018/09/Wildash_LOGO.png" alt="">
-      </div>
-      <div class="description">
-        With Deputy staffing  solutions, GM Ken Walton and his team can focus on delivering the best beans in South Africa.
-      </div>
-      <a href="" class="link link--card"> Read More <i class="fa fa-arrow-right"></i></a>
-      <div class="tip">
-        <i class="far fa-clock"></i>
-        2 min. read
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="logo">
-          <img src="https://d21pqaamub0upm.cloudfront.net/dptycms/wp-content/uploads/2018/09/Wildash_LOGO.png" alt="">
-      </div>
-      <div class="description">
-        With Deputy staffing  solutions, GM Ken Walton and his team can focus on delivering the best beans in South Africa.
-      </div>
-      <a href="" class="link link--card"> Read More <i class="fa fa-arrow-right"></i></a>
-      <div class="tip">
-        <i class="far fa-clock"></i>
-        2 min. read
-      </div>
-    </div>     -->
+  <section class="pagination">
+    <ul uib-pagination total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></ul>
   </section>
 </section>  
 
