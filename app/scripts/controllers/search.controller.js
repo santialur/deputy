@@ -38,7 +38,8 @@ angular.module('deputyApp')
 	//Pagination settings
 	$scope.itemsPerPage = 5; 
 	$scope.currentPage = 1;
-	
+
+	$scope.paginationSize; 
 	
 	$scope.$watch('selectFilter', () => {
 		let filtersApplied = 0;
@@ -52,6 +53,10 @@ angular.module('deputyApp')
 
 		getUseCaseList();
 	}, true);
+
+	$scope.$watch('paginationSize', () => {
+		$scope.itemsPerPage = $scope.paginationSize;
+	});
 
 	init();
 

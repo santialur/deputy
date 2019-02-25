@@ -36,6 +36,12 @@
 
   <section class="pagination">
     <ul uib-pagination total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></ul>
+    <select class="page-length" name="" id="" ng-model="paginationSize" ng-init="5">
+      <option value="" disabled>Select Page Size</option>
+      <option value="2">2</option>
+      <option value="5">5</option>
+      <option value="10">10</option>
+    </select>
   </section>
 </section>  
 

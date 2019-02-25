@@ -15,7 +15,7 @@
 
 	.filters {
 		padding-top: 20px;
-		color: #5D7888;
+		color: $teal;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -52,25 +52,25 @@
 			    justify-content: space-between;
 			    align-items: center;
 				width: 245px;
-				color: #5D7888;
-				background-color: #FFF !important; 
+				color: $teal;
+				background-color: $white !important; 
 
 				&:active, &:hover, &:focus {
-					background-color: #FFF !important; 
+					background-color: $white !important; 
 				}
 			}
 
 			li {
 				&.active {
 					a {
-						color: #FFF;
-						background-color: #093149;
+						color: $white;
+						background-color: $deputy-blue;
 					}
 				}
 
 				.option {
-					background-color: #F3F5F6;
-					color: #5D7888;
+					background-color: $grey;
+					color: $teal;
 					margin-top: 5px;
 					border-radius: 5px;
 					padding: 10px 30px 10px 15px;
@@ -88,7 +88,7 @@
 
 			    a {
 			    	padding: 0;
-			    	color: #259BE4;
+			    	color: $lighter-blue;
 			    	text-decoration: underline;
 			    	font-weight: bold;
 			    }				
@@ -97,7 +97,7 @@
 	}
 
 	select {
-		color: #5D7888;
+		color: $teal;
 		padding: 10px;
 	}
 
@@ -116,8 +116,8 @@
 
 		.card { 
 			flex-basis: 30%;
-			background-color: #FFFFFF;
-			color: #5D7888;
+			background-color: $white;
+			color: $teal;
 			margin-bottom: 30px;
 	
 			margin-left: 3%;
@@ -152,7 +152,7 @@
 
 		.bottom {
 			.link {
-				color: #1F77BC;
+				color: $light-blue;
 				font-weight: bold;
 				text-decoration: none;
 			}
@@ -163,8 +163,21 @@
 				text-transform: uppercase;
 			}
 		}
-	
 	}
+
+	.pagination {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.page-length {
+			margin-left: 10px;
+			height: 32px;
+		    background-color: $white;
+		    border-color: #DDD;
+		}
+	}
+
 }
 
 
